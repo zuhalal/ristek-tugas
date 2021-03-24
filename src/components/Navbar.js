@@ -1,50 +1,29 @@
+import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
-import Search from './Search'
-//import {searchValue, setSearchValue} from '../App'
-import { useState, useEffect } from 'react';
-
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 export default function Navbar() {
-    const [movies, setMovies] = useState([
-        
-    ])
-
-    const [searchValue, setSearchValue] = useState("")
-    const getMovieRequest = async () => {
-
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=64fee452`
-    const response = await fetch(url);
-
-    const responseJson = await response.json();
-
-    if (responseJson.Search) {
-        setMovies(responseJson.Search)
-    }
-    
-}
-
-    useEffect(() => {
-    getMovieRequest()}, [searchValue])
     
     return (
         <div>
             <div className="mb-2">
                 <nav className="shadow-md w-full flex gap-6 h-16">
-                    <div className="flex w-64 justify-center items-center mx-5">
-                        <h1 className="text-lg text-purple-500">Movie Ristek App</h1>
+                    <div className="flex md:w-64 justify-center items-center mx-5">
+                        <h1 className="md:text-lg text-md text-blue-600 font-Comfortaa w-36 md:w-auto">Movie Ristek App</h1>
                     </div>
-                    <div className="search flex justify-center items-center">
-                        <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
-                    </div>
-                    <div className="content-navbar flex mx-5 justify-center items-center gap-6">
+                    <div className="content-navbar md:flex md:mx-5 md:justify-center md:items-center md:gap-6">
                         <div className="">
-                            <a href="/">Bookmark</a>
+                            <Router><Switch><Link to={{pathname:'/bookmark'}}><h2 className="text-blue-600 md:flex hidden">Bookmark</h2></Link></Switch></Router>
                         </div>
                         <div>
-                            <a href="/">Liked</a>
+                            <Router><Switch><Link to={{pathname:'/liked'}}><h2 className="text-blue-600 md:flex hidden">Liked</h2></Link></Switch></Router>
                         </div>
                     </div>
-                    <div className="flex items-center w-full mr-6 justify-end invisible lg:visible">
+                    <div className="flex items-center justify-end md:hidden ml-24">
+                        <FontAwesomeIcon icon={faAlignJustify} className="text-blue-600" />
+                    </div>
+                    <div className="md:flex items-center w-full mr-6 justify-end hidden lg:flex">
                         <div className="flex lg:gap-4  justify-end">
                             <div className="name  ">
                                 <h2 className="text-gray-500">Zuhal 'Alimul Hadi</h2>
