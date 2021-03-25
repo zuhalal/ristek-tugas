@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Search(props) {
     return (
         <div className="flex flex-col gap-5">

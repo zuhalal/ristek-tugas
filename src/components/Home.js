@@ -6,19 +6,13 @@ import Footer from './Footer';
 import Heading from './Heading';
 
 export default function Home() {
-    const [movies, setMovies] = useState([
-        
-    ])
+    const [movies, setMovies] = useState([])
 
-    const [likes, setLikes] = useState([
-        
-    ])
+    const [likes, setLikes] = useState([])
     
-    const [bookmarks, setBookmarks] = useState([
-        
-    ])
+    const [bookmarks, setBookmarks] = useState([])
 
-    const [searchValue, setSearchValue] = useState("")
+    const [searchValue, setSearchValue] = useState([])
     
     const getMovieRequest = async () => {
 
@@ -31,7 +25,6 @@ export default function Home() {
         setMovies(responseJson.Search);
         
         }
-        
     }
 
     useEffect(() => {
@@ -59,7 +52,7 @@ export default function Home() {
 
     return (
         <>
-        <div className="h-full">
+        <div className="">
             <div className="flex justify-center">
                 <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div> 
@@ -71,15 +64,14 @@ export default function Home() {
                 <Heading heading="Liked" />
                 <Movie handleLikeClick={removeLikedMovies} handleBookmarkClick={addBookmarks} movies = {likes} LikesComponent={Likes}/>
             </div>
-            <div>
+            <div className="bookmark">
                 <Heading heading="Bookmark" />
                 <Movie handleBookmarkClick={removeBookmarkedMovies} handleLikeClick={addLike} movies={bookmarks}/>
             </div>
-            
-        </div>
-        <footer className="">
+            <div className="">
                 <Footer />
-            </footer>
+            </div>
+        </div>
         </>
     )
 }
