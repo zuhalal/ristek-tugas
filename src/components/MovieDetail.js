@@ -65,6 +65,7 @@ function MovieDetail(props) {
                             <Detail information={"Plot"} show={movies.Plot} />
                             <Detail information={"Actors"} show={movies.Actors} />
                             <Detail information={"Awards"} show={movies.Awards} />
+                            <Detail information={"Type"} show={movies.Type} />
                             
                             {/* <div className="w-5/6 flex">
                                 <div className="w-1/12 justify-start flex tab">
