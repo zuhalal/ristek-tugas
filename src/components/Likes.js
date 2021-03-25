@@ -5,7 +5,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons'
 const Likes = (props) => {
     return (
         <>  
-            <a className="text-white" onClick={() => props.handleLikeClick(props.movies)}><FontAwesomeIcon icon={faHeart} /></a>
+            <h3 className="text-white" onClick={() => props.handleLikeClick(props.movies)}><FontAwesomeIcon icon={faHeart} /></h3>
         </>
     )
 }

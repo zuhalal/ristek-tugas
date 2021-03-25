@@ -4,7 +4,6 @@ import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import Detail from './Detail';
 import Footer from './Footer';
-import Movie from './Movie';
 
 function MovieDetail(props) {
 
@@ -33,6 +32,7 @@ function MovieDetail(props) {
     }
     
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         getMovieDetail(imdbid)}, [])
 
     return (
@@ -49,11 +49,11 @@ function MovieDetail(props) {
                             <h1 className="text-lg font-Comfortaa">{movies.Title} ({movies.Year})</h1>
                         </div>
                         <div className="img-poster flex justify-center">
-                            <img width={200} src={movies.Poster}></img>
+                            <img width={200} src={movies.Poster} alt="Movie Poster"></img>
                         </div>
                         <div className="w-full flex justify-center gap-1">
                             <div className="md:flex hidden"><h2>IMDB Link:</h2></div>
-                            <div className=""><a href={`https://www.imdb.com/title/${imdbid}`} className="text-purple-500" target="_blank">{`https://www.imdb.com/title/${imdbid}`}</a></div>
+                            <div className=""><a href={`https://www.imdb.com/title/${imdbid}`} className="text-purple-500" target="_blank" rel="noreferrer">{`https://www.imdb.com/title/${imdbid}`}</a></div>
                         </div>
                         <div className="items-start flex flex-col w-full gap-1 mb-5 p-5 md:p-0">
                             <Detail information={"Title"} show={movies.Title} />

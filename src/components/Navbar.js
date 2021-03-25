@@ -1,5 +1,3 @@
-import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 export default function Navbar() {
@@ -27,7 +25,7 @@ export default function Navbar() {
                             <h2 className="text-gray-500 font-Comfortaa">Zuhal 'Alimul Hadi</h2>
                         </div>
                         <div className="hidden h-8 w-8 rounded-full ring-2 ring-white md:flex justify-end overflow-hidden items-center">
-                            <img src="https://pbs.twimg.com/profile_images/1291624470382182401/2GaubkcR_400x400.jpg" alt="profile image"></img>
+                            <img src="https://pbs.twimg.com/profile_images/1291624470382182401/2GaubkcR_400x400.jpg" alt=""></img>
                         </div>
                     </div>
                 </nav>
