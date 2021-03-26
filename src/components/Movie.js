@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 
 
 const Movie = (props) => {
-
     
     function titleChecker(movies) {
         if (movies.Title.length > 15) {
@@ -22,21 +21,21 @@ const Movie = (props) => {
                 {props.movies.map((movie)=> (
                 <>
                 {(movie.Type === "movie" || movie.Type ==="series") ?
-                <div className=" flex flex-col">
-                    <div className="flex hover:scale-105 w-36 md:mb-0 mb-5 cursor-pointer transform translate-x-1 translate-y-1 duration-200">
-                        <Link to={{
-                        pathname: "/detail",
-                        state: { imdbID: movie.imdbID }}}><img width={200} id="btn" className="hover:scale-105 cursor-pointer transform translate-x-1 translate-y-1 duration-200  transition-all" src={movie.Poster} alt="poster" ></img></Link>
-                        <div className="flex w-full gap-x-12 items-center justify-center absolute bottom-0 bg-black cursor-pointer transform translate-x-1 translate-y-1 duration-200 ">
-                            <div className=""><Likes movies={movie} handleLikeClick={props.handleLikeClick} /></div>
-                            <div className=""><Bookmark movies={movie} handleBookmarkClick={props.handleBookmarkClick}/></div>
+                    <div className=" flex flex-col">
+                        <div className="flex hover:scale-105 w-36 md:mb-0 mb-5 cursor-pointer transform translate-x-1 translate-y-1 duration-200">
+                            <Link to={{
+                            pathname: "/detail",
+                            state: { imdbID: movie.imdbID }}}><img width={200} id="btn" className="hover:scale-105 cursor-pointer transform translate-x-1 translate-y-1 duration-200  transition-all" src={movie.Poster} alt="poster" ></img></Link>
+                            <div className="flex w-full gap-x-12 items-center justify-center absolute bottom-0 bg-black cursor-pointer transform translate-x-1 translate-y-1 duration-200 ">
+                                <div className=""><Likes movies={movie} handleLikeClick={props.handleLikeClick} /></div>
+                                <div className=""><Bookmark movies={movie} handleBookmarkClick={props.handleBookmarkClick}/></div>
+                            </div>
+                        </div>
+                        <div className="mt-2">
+                            <h2 className="text-center">{(movie) ? titleChecker(movie):"loading..."}</h2>
                         </div>
                     </div>
-                    <div className="mt-2">
-                        <h2 className="text-center">{(movie) ? titleChecker(movie):"loading..."}</h2>
-                    </div>
-                </div>
-                : ''
+                    : ''
                 }
                 </>)
                 )}  

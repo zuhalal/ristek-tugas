@@ -9,6 +9,8 @@ export default function Home() {
     const [movies, setMovies] = useState([])
 
     const [likes, setLikes] = useState([])
+
+    let Temp = [];
     
     const [bookmarks, setBookmarks] = useState([])
 
@@ -31,14 +33,75 @@ export default function Home() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         getMovieRequest()}, [searchValue])
 
+    
+
     const addLike = (movie) => {
         const newLikeList = [...likes, movie];
-        setLikes(newLikeList);
+        var bool = true
+
+        if (likes) {
+            // eslint-disable-next-line
+            likes.map((like)=>{
+                //handle duplicate
+                if((Temp.includes(like.Title))) {
+                    bool = false;
+                    
+                } else {
+                    Temp.push(like.Title)
+                    bool = true;
+                    
+                }
+                
+            })
+        
+            if(bool === true) {
+                setLikes(newLikeList);
+                return
+
+            } else {
+                alert("Terdapat Movie yang sudah di liked sebelumnya, unlike film yang terduplikasi agar dapat menambahkan like yang lain")
+                return
+            }
+            
+        }
+        
     }
+
 
     const addBookmarks = (movie) => {
         const newBookmarkList = [...bookmarks, movie];
-        setBookmarks(newBookmarkList)
+
+        var bool = true;
+        
+        if (bookmarks) {
+            // eslint-disable-next-line
+            bookmarks.map((bookmark)=>{
+                //handle duplicate
+                if((Temp.includes(bookmark.Title))) {
+                    console.log("OIII udh ada");
+                    bool = false;
+                    
+                } else {
+                    Temp.push(bookmark.Title)
+                    console.log("blom ada oi");
+                    bool = true;
+                    
+                }
+                
+            })
+        
+            if(bool === true) {
+                setBookmarks(newBookmarkList);
+                return
+            } else {
+                alert("Terdapat Movie yang sudah di bookmark sebelumnya, lepas bookmark film yang terduplikasi agar dapat menambahkan bookmark yang lain")
+                return
+            }
+            
+        }
+
+
+        
     }
 
     const removeLikedMovies = (movie) => {
