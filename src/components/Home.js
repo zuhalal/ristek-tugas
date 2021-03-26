@@ -33,8 +33,6 @@ export default function Home() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         getMovieRequest()}, [searchValue])
 
-    
-
     const addLike = (movie) => {
         const newLikeList = [...likes, movie];
         var bool = true
@@ -45,11 +43,9 @@ export default function Home() {
                 //handle duplicate
                 if((Temp.includes(like.Title))) {
                     bool = false;
-                    
                 } else {
                     Temp.push(like.Title)
                     bool = true;
-                    
                 }
                 
             })
@@ -62,9 +58,7 @@ export default function Home() {
                 alert("Terdapat Movie yang sudah di liked sebelumnya, unlike film yang terduplikasi agar dapat menambahkan like yang lain")
                 return
             }
-            
         }
-        
     }
 
 
@@ -100,8 +94,6 @@ export default function Home() {
             
         }
 
-
-        
     }
 
     const removeLikedMovies = (movie) => {

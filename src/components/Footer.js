@@ -18,7 +18,7 @@ export default class Footer extends Component {
                         <span className="text-5xl text-white"><a href="mailto:zuhalalimulhadi19@gmail.com"><FontAwesomeIcon icon={faEnvelope} /></a></span>
                     </div>
                 </div>
-                <div className="footer-title flex  w-2/3 justify-start">
+                <div className="footer-title flex  w-2/3 justify-start md:ml-0 ml-10">
                     <h2 className="text-center md:text-lg text-sm font-Roboto text-white">&lt;/Coded&gt; by Zuhal 'Alimul Hadi</h2>
                 </div>
             </div>

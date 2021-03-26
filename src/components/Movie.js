@@ -11,7 +11,7 @@ const Movie = (props) => {
             return movies.Title.slice(0,14) + "..."
         } else {
             return movies.Title
-            }
+        }
         
     }
 
@@ -26,7 +26,7 @@ const Movie = (props) => {
                             <Link to={{
                             pathname: "/detail",
                             state: { imdbID: movie.imdbID }}}><img width={200} id="btn" className="hover:scale-105 cursor-pointer transform translate-x-1 translate-y-1 duration-200  transition-all" src={movie.Poster} alt="poster" ></img></Link>
-                            <div className="flex w-full gap-x-12 items-center justify-center absolute bottom-0 bg-black cursor-pointer transform translate-x-1 translate-y-1 duration-200 ">
+                            <div className="flex w-full gap-x-12 items-center justify-center absolute bottom-0 bg-black cursor-pointer transform translate-x-1 translate-y-1 duration-200 transition-all">
                                 <div className=""><Likes movies={movie} handleLikeClick={props.handleLikeClick} /></div>
                                 <div className=""><Bookmark movies={movie} handleBookmarkClick={props.handleBookmarkClick}/></div>
                             </div>
@@ -39,7 +39,6 @@ const Movie = (props) => {
                 }
                 </>)
                 )}  
-                
             </div>  
         </div>
     )

@@ -44,37 +44,28 @@ function MovieDetail(props) {
                 <div className="shadow-md">
                     <div className="flex flex-col items-start md:px-20">
                     {(movies) ? 
-                    <div className="w-full flex flex-col">
-                        <div className="flex justify-center">
-                            <h1 className="text-lg font-Comfortaa">{movies.Title} ({movies.Year})</h1>
-                        </div>
-                        <div className="img-poster flex justify-center">
-                            <img width={200} src={movies.Poster} alt="Movie Poster"></img>
-                        </div>
-                        <div className="w-full flex justify-center gap-1">
-                            <div className="md:flex hidden"><h2>IMDB Link:</h2></div>
-                            <div className=""><a href={`https://www.imdb.com/title/${imdbid}`} className="text-purple-500" target="_blank" rel="noreferrer">{`https://www.imdb.com/title/${imdbid}`}</a></div>
-                        </div>
-                        <div className="items-start flex flex-col w-full gap-1 mb-5 p-5 md:p-0">
-                            <Detail information={"Title"} show={movies.Title} />
-                            <Detail information={"Year"} show={movies.Year} />
-                            <Detail information={"Genre"} show={movies.Genre} />
-                            <Detail information={"Rating"} show={movies.Rated} />
-                            <Detail information={"Director"} show={movies.Director} />
-                            <Detail information={"Runtime"} show={movies.Runtime} />
-                            <Detail information={"Plot"} show={movies.Plot} />
-                            <Detail information={"Actors"} show={movies.Actors} />
-                            <Detail information={"Awards"} show={movies.Awards} />
-                            <Detail information={"Type"} show={movies.Type} />
-                            
-                            {/* <div className="w-5/6 flex">
-                                <div className="w-1/12 justify-start flex tab">
-                                    <h2 className="">Ratings:  </h2>
-                                </div>
-                                <div className="w-11/12 flex flex-col items-start">
-                                    <h2>{movies.Ratings.map((rating)=><h2>{rating.Source}, value: {rating.Value}</h2>)}</h2>
-                                </div>
-                            </div> */}
+                        <div className="w-full flex flex-col">
+                            <div className="flex justify-center">
+                                <h1 className="text-lg font-Comfortaa">{movies.Title} ({movies.Year})</h1>
+                            </div>
+                            <div className="img-poster flex justify-center">
+                                <img width={200} src={movies.Poster} alt="Movie Poster"></img>
+                            </div>
+                            <div className="w-full flex justify-center gap-1">
+                                <div className="md:flex hidden"><h2>IMDB Link:</h2></div>
+                                <div className=""><a href={`https://www.imdb.com/title/${imdbid}`} className="text-purple-500" target="_blank" rel="noreferrer">{`https://www.imdb.com/title/${imdbid}`}</a></div>
+                            </div>
+                            <div className="items-start flex flex-col w-full gap-1 mb-5 p-5 md:p-0">
+                                <Detail information={"Title"} show={movies.Title} />
+                                <Detail information={"Year"} show={movies.Year} />
+                                <Detail information={"Genre"} show={movies.Genre} />
+                                <Detail information={"Rating"} show={movies.Rated} />
+                                <Detail information={"Director"} show={movies.Director} />
+                                <Detail information={"Runtime"} show={movies.Runtime} />
+                                <Detail information={"Plot"} show={movies.Plot} />
+                                <Detail information={"Actors"} show={movies.Actors} />
+                                <Detail information={"Awards"} show={movies.Awards} />
+                                <Detail information={"Type"} show={movies.Type} />
                             </div>
                         </div> : 'Loading data...'}
                     </div>
@@ -83,7 +74,6 @@ function MovieDetail(props) {
             <div className="">
                 <Footer />
             </div>
-            
         </>
     )
 }
