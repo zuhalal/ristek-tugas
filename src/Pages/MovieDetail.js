@@ -2,8 +2,8 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
-import Detail from './Detail';
-import Footer from './Footer';
+import Detail from '../components/Detail';
+import Footer from '../components/Footer';
 
 function MovieDetail(props) {
 
@@ -22,8 +22,6 @@ function MovieDetail(props) {
         if (responseJson) {
             setMovies(responseJson);
         } 
-
-        console.log(responseJson);
         
     }
 

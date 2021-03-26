@@ -1,12 +1,12 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import MovieDetail from './components/MovieDetail';
+import MovieDetail from './Pages/MovieDetail';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import Home from './components/Home';
+import Home from './Pages/Home';
 
 function App() {
 

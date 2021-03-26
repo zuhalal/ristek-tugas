@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import Movie from './Movie';
-import Search from './Search';
-import Likes from './Likes';
-import Footer from './Footer';
-import Heading from './Heading';
+import Movie from '../components/Movie';
+import Search from '../components/Search';
+import Likes from '../components/Likes';
+import Footer from '../components/Footer';
+import Heading from '../components/Heading';
 
 export default function Home() {
     const [movies, setMovies] = useState([])
