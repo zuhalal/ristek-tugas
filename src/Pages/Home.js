@@ -72,12 +72,10 @@ export default function Home() {
             bookmarks.map((bookmark)=>{
                 //handle duplicate
                 if((Temp.includes(bookmark.Title))) {
-                    console.log("OIII udh ada");
                     bool = false;
                     
                 } else {
                     Temp.push(bookmark.Title)
-                    console.log("blom ada oi");
                     bool = true;
                     
                 }
