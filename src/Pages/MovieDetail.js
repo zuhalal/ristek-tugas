@@ -50,7 +50,7 @@ function MovieDetail(props) {
                                 <img width={200} src={movies.Poster} alt="Movie Poster"></img>
                             </div>
                             <div className="w-full flex justify-center gap-1">
-                                <div className="md:flex hidden"><h2>IMDB Link:</h2></div>
+                                <div className="md:flex hidden"><p>IMDB Link:</p></div>
                                 <div className=""><a href={`https://www.imdb.com/title/${imdbid}`} className="text-purple-500" target="_blank" rel="noreferrer">{`https://www.imdb.com/title/${imdbid}`}</a></div>
                             </div>
                             <div className="items-start flex flex-col w-full gap-1 mb-5 p-5 md:p-0">
